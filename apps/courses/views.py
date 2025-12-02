@@ -46,4 +46,4 @@ def course_detail(request):
     return render(request, 'courses/course_detail.html')
 
 def course_lessons(request):
-    return render(request, 'courses/course.html')
+    return render(request, 'courses/course.html') 
