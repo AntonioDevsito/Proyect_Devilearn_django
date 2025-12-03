@@ -13,41 +13,11 @@
 {% block content %}
     <div class="layout">
 
-        <div class="sidebar">
-            <div class="logo">
-                <img src="{% static '/images/devilearn.png' %}" alt="Logo">
-            </div>
-            <ul class="menu">
-                <li><a class="menu-option" href="index.html"><i
-                            class="fa-solid fa-house icon"></i><span>Dashboard</span></a>
-                </li>
-                <li><a class="menu-option" href="courses.html"><i
-                            class="fa-solid fa-chalkboard-user icon"></i><span>Cursos</span></a></li>
-
-
-            </ul>
-            <ul class="bottom-menu">
-                <li><a class="menu-option" href="#"><i class="fa-solid fa-question icon"></i><span>Soporte</span></a>
-                </li>
-                <li><a class="menu-option" href="#"><i class="fa-solid fa-gear icon"></i><span>Configuración</span></a>
-                </li>
-            </ul>
-        </div>
-
+        {% include 'includes/sidebar.html' %}
         <!-- Main content -->
         <div class="main-content">
             <!-- Header -->
-            <div class="header">
-                <div class="search-box">
-                    <i class="fa-solid fa-magnifying-glass icon"></i>
-                    <input type="text" placeholder="Buscar..." />
-                </div>
-                <div class="header-right">
-                    <div class="avatar">
-                        <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="User" />
-                    </div>
-                </div>
-            </div>
+            {% include "includes/header.html" %}
 
             <!-- Aquí va el contenido de la página -->
             <main>
@@ -103,7 +73,7 @@
                                 <li><i class="fa-solid fa-video"></i> 8 horas de contenido en video</li>
                                 <li><i class="fa-solid fa-graduation-cap"></i> Ricardo Cuéllar</li>
                             </ul>
-                            <a class="btn bnt-primary btn-course" href="course_lessons.html">Continuar aprendiendo</a>
+                            <a class="btn bnt-primary btn-course" href="{% url 'course_lessons' %}">Continuar aprendiendo</a>
 
                         </div>
                     </div>
@@ -111,5 +81,10 @@
             </main>
         </div>
     </div>
+    {% endblock content %}
+    
+    {% block scripts %}
+        
     <script src="{% static '/js/script.js' %}"></script>
-{% endblock content %}
+    {% endblock scripts %}
+        

@@ -30,7 +30,7 @@ def course_list(request):
         'id':4,
         'level':'Principiante',
         'rating':4.7,
-        'course_title':"Curso de FastAPI para Principiantes",
+        'course_title':"Curso de FastAPI para Principiantes", 
         'instructor':"Gregory Harrys",
         'course_image':'/images/curso_4.jpg',
         'instructor_image':"https://randomuser.me/api/portraits/men/30.jpg",
@@ -43,7 +43,37 @@ def course_list(request):
     })
 
 def course_detail(request):
+    course = {
+        'coursee_title':"django Aplicaciones",
+        'course_link':"",
+        'info_course':{
+            'lessons':79,
+            'duration':8,
+            'instructor':'Ricardo Cuéllar'
+        },
+        'course_content':[
+            {
+             'id':1,
+             'name':'intorduccion al curso',
+             'lesssons':[
+                  {
+                      'name':'¿Qué aprenderás en el curso',
+                      'type':"video",
+                  },
+                  {
+                      'name':'¿Cósmo usar la plataforma?',
+                      'type':'article'
+                  }
+              ]
+            }
+        ]
+    }
+
     return render(request, 'courses/course_detail.html')
 
 def course_lessons(request):
-    return render(request, 'courses/course.html') 
+    return render(request, 'courses/course_lessons.html') 
+def profile(request):
+    return render(request, 'courses/profile.html')
+def index(request):
+    return render(request, 'courses/index.html')
